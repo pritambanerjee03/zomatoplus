@@ -19,9 +19,9 @@ import com.thinkxfactor.zomztoplus.repository.RestaurantRepository;
 import com.thinkxfactor.zomztoplus.repository.UserRepository;
 
 @RestController
-@RequestMapping("/resturent")
+@RequestMapping("/restaurant")
 
-public class ResturentController {
+public class RestaurantController {
 	
 	
 	
@@ -35,6 +35,13 @@ public class ResturentController {
 		
 		
 		return persistedUser;
+	}
+	
+	
+	@GetMapping("/getAll")
+	public List<Resturent> getAll() {
+		List<Resturent> listofrestaurant=resturentRepository.findAll();
+		return listofrestaurant;
 	}
 	
 	@Autowired
